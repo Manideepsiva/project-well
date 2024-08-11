@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Booking</title>
+    <link rel="stylesheet" href="../appointment.css">
+    
+
+    <style>
+        h2 {
+            position: absolute;
+    left: 50%;
+    top: 2%; 
+    transform: translateX(-20%);
+    font-family: "Lucida Calligraphy", "Lucida Bright", cursive;
+    font-size: 28px; 
+    font-weight: bold; 
+    font-style: italic; 
+    
+    letter-spacing: 2px; 
+    color: #333; 
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.2); 
+        }
+
+    .typetest{
+        display: none;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div class = "wrap">
+    <div class="container" >
+        
+        <h1>ENTER YOUR DETAILS</h1>
+        <form id="appointmentForm" action ="/dashboard/appointment" method="post">
+            <label for="name">Patient Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Patient Name" required>
+            <div class="genderabout">
+               
+                <select id="gender" name="gender" required>
+                  
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  
+                   
+                </select>
+            </div>
+           
+            <label for="email">Patient E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Patient Email" required>
+            <label for="phone">Patient Phone no:</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter Patient Phone Number" required>
+            <label for="addressDetails"> Address Details:</label>
+            <div class="address-details">
+                <input type="text" id="area" name="area" placeholder="Enter Area" required>
+                <input type="text" id="city" name="city" placeholder="Enter City" required>
+                <input type="text" id="state" name="state" placeholder="Enter State" required>
+                <input type="text" id="postalCode" name="postalCode" placeholder="Enter Postal Code" required>
+                
+            </div>
+            <label for="date">Appointment Date and Time:</label>
+            <div class="time-slots">
+                <input type="date" id="date" name="date" min ="2023-03-24"required>
+                <select id="time" name="time" required>
+                  
+                    <option value="9-10 AM">9-10 AM</option>
+                    <option value="10-11 AM">10-11 AM</option>
+                    <option value="11-12 PM">11-12 PM</option>
+                    <option value="12-1 PM">12-1 PM</option>
+                    <option value="1-2 PM">1-2 PM</option>
+
+                    <option value="2-3 PM">2-3 PM</option>
+                    <option value="3-4 PM">3-4 PM</option>
+                    <option value="4-5 PM">4-5 PM</option>
+                    <option value="5-6 PM">5-6 PM</option>
+                    <option value="6-7 PM">6-7 PM</option>
+                    <option value="7-8 PM">7-8 PM</option>
+                   
+                </select>
+            </div>
+            <label for="message">Additional Information:</label>
+            <textarea id="message" name="message" placeholder="Enter Additional Information"></textarea>
+            <input type="submit" value="Book Appointment">
+        </form>
+        <br>
+        <p class="note">* Indicates required fields</p>
+    </div>
+</div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <p id="successMessage">Appointment Booked Successfully</p>
+            <button id="okButton">OK</button>
+        </div>
+    </div>
+
+  
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    function pad(number, length) {
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+    return str;
+}
+
+function getNextDate(dateString) {
+    
+    var parts = dateString.split('-');
+    var year = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10) - 1; 
+    var day = parseInt(parts[2], 10);
+    var currentDate = new Date(year, month, day);
+   console.log(currentDate);
+    currentDate.setDate(currentDate.getDate() + 1);
+    console.log(currentDate);
+    var nextDate = currentDate.getFullYear() + '-' + pad((currentDate.getMonth() + 1), 2) + '-' + pad(currentDate.getDate(), 2);
+   console.log(nextDate);
+    return nextDate;
+}
+
+function getdate(){
+var month = new Date().getMonth()+1;
+if(month>9){
+    return (new Date().getFullYear())+"-"+(month)+"-"+(new Date().getDate());
+
+}
+else if(month <=9){
+    return (new Date().getFullYear())+"-0"+(month)+"-"+(new Date().getDate());
+
+}
+
+}
+ $(function(){
+    function getQueryParam(name) {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+    var querypara = getQueryParam("hosid");
+    var treat = getQueryParam("treat")
+    $("form").attr('action',"/dashboard/appointment"+"?"+"hosid="+querypara+"&"+"treat="+treat);
+    console.log( $("form").attr('action'));
+    console.log('Min Date:', $('#date').attr('min'));
+    var presdate = getdate();
+    var nextdate = getNextDate(presdate);
+    console.log(nextdate);
+   
+    $("#date").attr('min',nextdate);
+    console.log('Min Date:', $('#date').attr('min'));
+   
+ })
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In</title>
+<link rel="stylesheet" href="signin.css">
+</head>
+<body >
+  <div class  = "container">
+
+    <form action="/hossignin" class = "form_details" method="post">
+    <h1> Log in</h1>
+   
+    <div class = "input">
+    <input type = "text" placeholder="Hospital id" name="usermail" required >
+  </div>
+  <br>
+
+  <div class = "input">
+    <input type="password" placeholder="Password" name="password" required>
+  </div>
+  <div >
+    <!-- <p id = "Forgot" style="display: inline-block;"><a href = "/forgotpass">Forgot password ? </a> </p> -->
+    <p style="display: inline-block; margin-left: 290px;"> <%= errors %></p>
+
+    </div>
+
+    <button type="submit">LOG IN</button>
+  </form>
+  
+  <p>________________________________OR__________________________________</p>
+  <br> 
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src = "login.js"></script>
+</body>
+</html>

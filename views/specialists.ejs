@@ -1,0 +1,544 @@
+<html>
+
+<head>
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../adminsite/css/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="../adminsite/css/vendors/line-awesome.min.css" />
+    <link rel="stylesheet" href="../adminsite/css/pages/layout.css" />
+    <link rel="icon" href="../adminsite/images/covid-19.ico" />
+    <script src="../adminsite/js/vendors/jquery.min.js"></script>
+    <script src="../adminsite/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="../adminsite/js/global.js"></script>
+    <link rel="stylesheet" href="../adminsite/css/pages/specialists.css" />
+    <style>
+        .namaste{
+           position: fixed;
+            width: 100vw;
+            height: 100vh;
+          left: 0;
+          top: 0;
+          z-index: 200;
+        }
+
+        .wrappingman{
+            position: fixed;
+        width:100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.5); 
+        display: none;
+        
+        top:0;
+        left:0;
+        z-index: 1;
+            
+        }
+
+.testbox  h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+        margin-top: 1%;
+      display: flex;
+      width:30%;
+      margin-left: 30%;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      .testbox  form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 10px 0 #cc0052; 
+      }
+      .testbox .banner {
+      position: relative;
+      height: 210px;
+      background-image: url("/uploads/media/default/0001/01/f1cf9a9068f4bfbdbd9758c45db79203579a3561.jpeg");      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .testbox  .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.4); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      .testbox  input, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      .testbox  input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      .testbox  textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+
+      .testbox  select{
+      width: calc(100% - 12px);
+      padding: 5px;
+      margin-bottom: 10px;
+      }
+      .testbox  .item:hover p, input:hover::placeholder {
+      color: #cc0052;
+      }
+      .testbox  .item input:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #cc0052;
+      color: #cc0052;
+      }
+      .testbox  .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .testbox  .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      .testbox  button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #cc0052;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      .testbox  button:hover {
+      background: #ff0066;
+      }
+      @media (min-width: 568px) {
+        .testbox  .name-item, .contact-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .testbox  .contact-item .item {
+      width: calc(50% - 8px);
+      }
+      .testbox  .name-item input {
+      width: calc(50% - 20px);
+      }
+      .testbox  .contact-item input {
+      width: calc(100% - 12px);
+      }
+
+    
+      }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top"><a class="navbar-brand" href=""><img
+                    src="../adminsite/images/logo.png" /><span>Wellness Nexus</span></a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link"><i class="las la-question-circle"></i></a></li>
+                    <li class="nav-item dropdown dropleft"><a class="nav-link notification-dropdown" href="#"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                class="badge badge-pill badge-primary"
+                                style="float:right;margin-bottom:-10px;"></span><i class="las la-bell"></i></a>
+                        <div class="dropdown-menu notification-dropdown-menu shadow-lg"
+                            aria-labelledby="notification-dropdown">
+                            <div class="dropdown-title"><a href="">notifications<span
+                                        class="ml-2 notifications-count">(3)</span></a><a class="float-right"
+                                    href="">mark all as read</a></div>
+                            <div class="dropdown-body">
+                                <ul class="list-unstyled">
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">collaboration tools available</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">use the new app launcher</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/logo.png" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">the new dashboard available</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-footer text-center"><a href="notifications.html">view more</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><span class="vertical-divider"></span></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <div class="dropdown-menu shadow-lg profile-dropdown-menu"
+                                aria-labelledby="profile-dropdown"><a class="dropdown-item" href="#"><i
+                                        class="las la-user mr-2"></i>profile</a><a class="dropdown-item" href="#"><i
+                                        class="las la-cog mr-2"></i>settings</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="side-nav">
+            <ul class="list-group list-group-flush"><a class="list-group-item" href="/hosdashboard"
+                data-toggle="tooltip" data-placement="bottom" title="Dashboard"
+                style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shapes la-lw"></i><span>dashboard</span></a><a class="list-group-item" href="/specialists" data-toggle="tooltip"
+                data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i>
+                <span>specialists</span></a><a class="list-group-item"
+                href="/hostodayapp" data-toggle="tooltip" data-placement="bottom" title="Appointment"style= "background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i><span>today Appointments</span></a><a class="list-group-item" href="/hosappointment" data-toggle="tooltip"
+                data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i>
+                <span>Appointment</span></a><a class="list-group-item" href="/settings" data-toggle="tooltip"
+                data-placement="bottom" title="Settings" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-cogs la-lw"></i>
+                <span>settings</span></a>
+            <hr class="divider" />
+            <div class="aob-items">
+
+        </ul>
+        </div>
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="section title-section">
+                    <h5 class="page-title"></h5>
+                </div>
+                <div class="section filters-section justify-content-between">
+                    <div class="dropdowns-wrapper">
+                        <div class="dropdown"><a class="btn btn-dark-red-o dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">filter</a>
+                            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a
+                                    class="dropdown-item" href="#">name</a><a class="dropdown-item"
+                                    href="#">gender</a><a class="dropdown-item" href="#">specialization</a><a
+                                    class="dropdown-item" href="#">email</a><a class="dropdown-item" href="#">phone
+                                    no.</a><a class="dropdown-item" href="#">address</a></div>
+                        </div>
+                        <div class="dropdown"><a class="btn btn-dark-red-o dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">sort by</a>
+                            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownMenuLink"><a
+                                    class="dropdown-item" href="#">name</a><a class="dropdown-item"
+                                    href="#">gender</a><a class="dropdown-item" href="#">specialization</a><a
+                                    class="dropdown-item" href="#">email</a><a class="dropdown-item" href="#">phone
+                                    no.</a><a class="dropdown-item" href="#">address</a></div>
+                        </div>
+                    </div>
+                    <div class="buttons-wrapper" id = "adddoctor"><button class="btn btn-dark-red-f-gr"><i
+                                class="las la-plus-circle"></i>add a new specialist</button></div>
+                </div>
+                <div class="section specialists-table-view">
+                    <table class="table table-hover table-responsive-lg">
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>gender</th>
+                                <th>specialization</th>
+                                <th>email</th>
+                                <th>phone no.</th>
+                                <th>address</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class = 'doctordet'>
+                            <tr>
+                                <td><img class="rounded-circle mr-1" src="../adminsite/images/doctor (1).svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td class="text-muted">male</td>
+                                <td>dentist</td>
+                                <td class="text-lowercase text-muted"><a href="">abc@def.com</a></td>
+                                <td>9988776542</td>
+                                <td class="text-muted"><a href="">chennai,Tamilnadu</a></td>
+                                <td><button class="btn btn-sm btn-dark-red-f">MBBS</button></td>
+                                <td><a href=""><i class="las la-ellipsis-h"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><img class="rounded-circle mr-1" src="../adminsite/images/doctor (1).svg"
+                                        loading="lazy" /><span class="ml-2">name</span></td>
+                                <td class="text-muted">male</td>
+                                <td>radiology</td>
+                                <td class="text-lowercase text-muted"><a href="">abc@def.com</a></td>
+                                <td>7894563218</td>
+                                <td class="text-muted"><a href="">Vijayawada,AP</a></td>
+                                <td><button class="btn btn-sm btn-dark-red-f">MBBS</button></td>
+                                <td><a href=""><i class="las la-ellipsis-h"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><img class="rounded-circle mr-1" src="../adminsite/images/doctor (1).svg"
+                                        loading="lazy" /><span class="ml-2">name</span></td>
+                                <td class="text-muted">female</td>
+                                <td>heart surgeon</td>
+                                <td class="text-lowercase text-muted"><a href="">abc@def.com</a></td>
+                                <td>7896541238</td>
+                                <td class="text-muted"><a href="">New Delhi</a></td>
+                                <td><button class="btn btn-sm btn-dark-red-f">MBBS</button></td>
+                                <td><a href=""><i class="las la-ellipsis-h"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><img class="rounded-circle mr-1" src="../adminsite/images/doctor (1).svg"
+                                        loading="lazy" /><span class="ml-2">name</span></td>
+                                <td class="text-muted">male</td>
+                                <td>neurologist</td>
+                                <td class="text-lowercase text-muted"><a href="">abc@def.com</a></td>
+                                <td>9856742394</td>
+                                <td class="text-muted"><a href="">Mumbai</a></td>
+                                <td><button class="btn btn-sm btn-dark-red-f">MBBS</button></td>
+                                <td><a href=""><i class="las la-ellipsis-h"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal onboarding-modal" tabindex="=1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Welcome</h5><button class="close" type="button"
+                                    data-dismiss="modal" aria-label="Close"><i class="las la-times-circle"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="carousel slide" id="carouselExampleCaptions" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"><img class="d-block"
+                                                src="../adminsite/images/undraw_dashboard_nklg.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>intuitive<a href="" data-dismiss="modal">dashboard<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_medicine_b1ol.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>access to<a href="specialists.html">specialists<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_receipt_ecdd.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>simple<a href="Appointment.html">Appointment<i
+                                                            class="las la-external-link-alt"></i></a>process</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_new_notifications_fhvw.svg"
+                                                alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>comprehensive<a href="notifications.html">notification<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_Preferences_re_49in.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>minimalist<a href="settings.html">settings<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div>
+                                        </div>
+                                    </div><a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                        data-slide="prev"><i class="las la-chevron-circle-left"></i><span
+                                            class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                        href="#carouselExampleCaptions" role="button" data-slide="next"><i
+                                            class="las la-chevron-circle-right"></i><span
+                                            class="sr-only">Next</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "wrappingman">
+            <div class = "namaste">
+                <div class="testbox">
+                  <form id = "myform" action="/">
+                  
+                    <div class="item">
+                      <p>Name & Gender</p>
+                      <div class="name-item" style="display: flex;">
+                        <div>
+                        <input type="text" style="width: 130%;" name="name" placeholder="Name" /></div>
+                        <div>
+                        <select id="country"   style="width: 100%;" name="sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                          
+                          </select></div>
+                      </div>
+                    </div>
+                    <div class="contact-item">
+                      <div class="item">
+                        <p>Email</p>
+                        <input type="text" name="mail"/>
+                      </div>
+                      <div class="item">
+                        <p>Phone</p>
+                        <input type="text" name="phone"/>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <p>Specialization</p>
+                      <select id="country" name="country">
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Endocrinologist">Endocrinologist</option>
+                        <option value="astroenterologist">Gastroenterologist</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="Pediatrician">Pediatrician</option>
+                        <option value="Psychiatrist">Psychiatrist</option>
+                        <option value="Radiologist">Radiologist</option>
+                        <option value="Urologist">Urologist</option>
+                      </select>
+                    </div>
+                    <div class="item">
+                      <p>City</p>
+                      <input type="text" name="city"/>
+                    
+                    </div>
+                   
+                   <div style="display: flex;">
+                    <div class="btn-block">
+                      <button type="button" id= "wrapclose" href="/">CLOSE</button>
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit"  id = "wrapadd" href="/">ADD</button>
+                      </div>
+                </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+            <footer>
+                <div class="page-footer text-center">
+                    <div class="fixed-bottom shadow-sm"><a href="https://covid19.who.int" target="_blank"><img
+                                src="../adminsite/images/covid-19.svg" /><span>view COVID-19 info</span></a></div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+
+function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+        
+        $(document).ready(function(){
+            getdata();
+           if(getQueryParam("variable") == 1){
+            $(".wrappingman").show();
+
+           }
+
+        });
+
+        $("#adddoctor").on('click',function(){
+            $(".wrappingman").show();
+
+        })
+
+        $("#wrapadd").on('click',function(e){
+            console.log("ochesa");
+            e.preventDefault();
+            let formData = $('#myform').serialize();
+            $.ajax({
+            type: 'POST',
+            url: "http://localhost:3000/adddoctorhos",
+            data: formData,
+            success: function(res) {
+                $(".wrappingman").hide();
+                getdata();
+
+                
+            },
+            error: function(error) {
+                console.error('Form submission error:', error);
+            }
+        });
+
+        })
+
+        $("#wrapclose").on('click',function(){
+            $(".wrappingman").hide();
+        })
+
+
+function getdata(){
+        $.ajax({
+       type:"GET",
+       url:"http://localhost:3000/hospdata",
+      
+       success:function(data){
+        var len = data[0]["doctordetails"].length;
+        
+      
+
+       
+         $(".doctordet").html('');
+
+            for(var i = 0; i< len;i++){
+           $(".doctordet").append(`<tr>
+                                <td><img class="rounded-circle mr-1" src="../adminsite/images/doctor (1).svg"
+                                        loading="lazy" /><span class="ml-2">${data[0]["doctordetails"][i]["doctorname"]}</span></td>
+                                <td class="text-muted">${data[0]["doctordetails"][i]["gender"]}</td>
+                                <td>${data[0]["doctordetails"][i]["spec"]}</td>
+                                <td class="text-lowercase text-muted"><a href="">${data[0]["doctordetails"][i]["email"]}</a></td>
+                                <td>${data[0]["doctordetails"][i]["phone"]}</td>
+                                <td class="text-muted"><a href="">${data[0]["doctordetails"][i]["city"]}</a></td>
+                                <td><button class="btn btn-sm btn-dark-red-f">MBBS</button></td>
+                                <td><a href=""><i class="las la-ellipsis-h"></i></a></td>
+                            </tr>`);
+                                        }
+
+
+           
+       },
+       error:function()
+       {  console.log('hello there');
+           $('#suggestions1').html("sorry we havent there yet").show();
+           
+       },
+       fail:function(){
+           console.log('im sorry');
+       }
+     });
+    }
+  
+
+    </script>
+</body>
+
+</html>

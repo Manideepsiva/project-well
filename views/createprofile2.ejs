@@ -1,0 +1,72 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../appointment.css">
+
+
+<style>
+    .wrap{
+        align-items: center;
+        height: 100vh;
+    }
+    .container{
+        background-color: black;
+    }
+    input, textarea, select {
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 20px;
+border: 1px solid #ccc;
+flex-grow: 1;
+}
+
+input[type="submit"] {
+background-color: darkturquoise;
+color: rgb(88, 11, 11);
+border: none;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #aab56e;
+}
+h1{
+color: #ccc;
+}
+
+</style>
+</head>
+<body>
+
+
+    <div class = "wrap">
+        <div class="container" >
+            
+            <h1>ENTER YOUR DETAILS</h1>
+            <form action="/createprofile"  method= "post">
+                <label for="firstusername">first name :</label>
+                <input type="text" required name="firstusername">
+                <label for="lastusername">last name:</label>
+                <input type="text" required name="lastusername">
+                <br>
+                
+                <input type="submit">
+            </form>
+            <br>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

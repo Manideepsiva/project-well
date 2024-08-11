@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title> &amp; </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Health Care Medical Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Novena HTML Template v1.0">
+
+  <!-- Favicon -->
+
+  <!-- 
+  Essential stylesheets
+  =====================================-->
+  <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../icofont/icofont.min.css">
+  <link rel="stylesheet" href="../slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="../slick-carousel/slick/slick-theme.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../style2.css">
+  <style>
+  ion-icon { display: block; }
+  li { list-style: none; }
+
+    body.nav-active { overflow: hidden; }
+    .header2 .btn { display: none; }
+    .start:before{
+        content: "";
+        position:absolute;
+        background-color:#223a66;
+        width: 100%;
+     
+        left: 0;
+        top: 0;
+         bottom: 0;
+        right: 0;
+         width: 100%;
+        height: 20rem;
+        opacity: 0.9;
+         background: #223a66;
+      
+
+         
+    }
+
+    .notext{
+        text-wrap: nowrap;
+    }
+    
+    button {
+    background: none;
+    border: none;
+    font: inherit;
+  }
+  .buttflex{
+    display: flex;
+    justify-content:space-between;
+  }
+
+  .card{
+    
+    position: relative;
+  }
+
+  .patcont{
+    padding-right: 0;
+  }
+    .cardbody{
+        
+        margin-left: 21rem;
+        margin-block-start: 21rem;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        gap: 3rem;
+    }
+    .patcont{
+        margin-block-start: 2rem;
+        padding-inline-start: 4rem;
+    }
+    .dialouge{
+        position: fixed;
+        margin-left: 28%;
+        top: 0;
+        width: 40%;
+         display: none;
+        margin-top: 20%;
+        background-color: red;
+        z-index: 400;
+        
+    }
+    .covercont{
+        position: fixed;
+        width:100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.5); 
+        display: none;
+        top:0;
+        left:0;
+        z-index: 3000;
+        
+    }
+    .opendiscancel{
+        display: block;
+     
+    }
+  
+
+    .wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 25px 25px 30px;
+  box-shadow: 8px 8px 10px rgba(0,0,0,0.06);
+}
+.wrapper h2{
+  color: #4671EA;
+  font-size: 28px;
+  text-align: center;
+}
+.wrapper textarea{
+  width: 100%;
+  resize: none;
+  height: 140px;
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  max-height: 330px;
+  caret-color: #4671EA;
+  border: 1px solid #bfbfbf;
+}
+textarea::placeholder{
+  color: #b3b3b3;
+}
+textarea:is(:focus, :valid){
+  padding: 14px;
+  border: 2px solid #4671EA;
+}
+textarea::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+   
+     .card img{
+        height: 6rem;
+        object-fit: cover;
+     }
+     .card h5{
+        margin: 0;
+        font-size: 2rem;
+
+     }
+     .cardsub2 p {
+        display: inline;
+     }
+     .hasi-before,
+  .hasi-after {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hasi-before::before,
+  .hasi-after::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .butt {
+    background-color: var(--verdigris);
+    color: var(--white);
+    font-size: 0.8rem;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius-6);
+    overflow: hidden;
+    margin-inline-start: 20%;
+   
+  }
+
+
+  
+  .butt::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--eerie-black);
+    border-radius: var(--radius-6);
+    transition: var(--transition-2);
+    z-index: -100;
+  }
+  .setcancel{
+    position: absolute;
+    bottom:6px;
+    text-wrap: nowrap;
+    margin-left: 8%;
+
+  }
+
+
+  
+  .butt:is(:hover, :focus-visible)::before { transform: translateX(100%); }
+
+
+  .hasii-before,
+  .hasii-after {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hasii-before::before,
+  .hasii-after::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .buttt {
+    
+    background-color: var(--verdigris);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 12px 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius-6);
+    overflow: hidden;
+   
+  }
+  
+  .buttt::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--eerie-black);
+    border-radius: var(--radius-6);
+    transition: var(--transition-2);
+    z-index: -100;
+  }
+
+
+  
+  .buttt:is(:hover, :focus-visible)::before { transform: translateX(100%); }
+
+
+  
+
+     .cardtop{
+        display: flex;
+        justify-content:center;
+     }
+
+     .cardtop:nth-last-child(){
+        height: 5rem;
+      
+     }
+     .cardtop a{
+        margin-block-start: 2rem;
+     }
+
+     .card p {
+        line-height: 1rem;
+
+     }
+     
+
+
+    .start{
+        position: absolute;
+        background-image: url("../bg/22.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 20rem;
+
+    }
+    .start ul{
+        position:relative;
+        margin-block-start: 8rem;
+        margin-inline-start: 43%;
+    }
+    .start li{
+        position: absolute;
+        font-size: 3rem;
+      
+
+    }
+
+    .sidenavapp{
+       
+        position:fixed;
+        
+        width:20rem;
+        height: 100vh;
+        background-color:#ededed;
+        z-index: 0;
+    }
+    .sidenavapp ul{
+        padding: 0;
+        
+       
+        
+    }
+    .setblack{
+        color: black;
+    }
+
+    .sidenavapp li{
+        margin-block-start: 1vh;
+        font-size: 1.5rem;
+        
+        color:#fff;
+        background-color:cadetblue;
+        width: 20rem;
+        height: 4rem;
+        padding-top: 0.7rem;
+        text-align: center;
+        
+        
+    }
+    .sidenavapp li:hover{
+    cursor: pointer;
+    border:2px solid black;
+
+    }
+    .inwrap{
+        position: fixed;
+        left: 0;
+        top:27.5vh;
+      
+    }
+    
+  .header2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 16px;
+    z-index: 4;
+  }
+  
+  .header2.active {
+    position: fixed;
+    background-color: var(--rich-black-fogra-29);
+    animation: headerActive 0.5s ease forwards;
+  }
+  
+  @keyframes headerActive {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .header2 .container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-open-btn2 {
+    color: var(--white);
+    font-size: 4rem;
+  }
+  
+  .navbar2,
+  .overlay2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .navbar2 {
+    right: -300px;
+    max-width: 300px;
+    background-color: var(--rich-black-fogra-29);
+    z-index: 3;
+    transition: 0.25s var(--cubic-in);
+    visibility: hidden;
+  }
+  
+  .navbar2.active {
+    transform: translateX(-300px);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+  }
+  
+  .navbar-top2 {
+    position: relative;
+    padding-inline: 25px;
+    padding-block: 55px 100px;
+  }
+  
+  .nav-close-btn2{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--white);
+    font-size: 2.8rem;
+  }
+  
+  .navbar-list2 {
+    margin-block-end: 30px;
+    border-block-end: 1px solid var(--white_a10);
+  }
+  
+  .navbar-item2 { border-block-start: 1px solid var(--white_a10); }
+  
+  .navbar-link2{
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 10px 24px;
+  }
+  
+  .social-list2 {
+    justify-content: center;
+    gap: 20px;
+    color: var(--white);
+    font-size: 1.8rem;
+  }
+  
+  .overlay2 {
+    right: -100%;
+    background-color: var(--black);
+    opacity: 0.3;
+    visibility: hidden;
+    transition: var(--transition-2);
+    z-index: 2;
+  }
+  
+  
+  
+  .overlay2.active {
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+  .title-md { font-size: var(--title-md); }
+
+
+  @media (min-width: 768px) {
+  
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --headline-lg: 8rem;
+    --headline-md: 4.8rem;
+
+  }
+
+  .container2 {
+    max-width: 750px;
+    width: 100%;  
+    margin-inline: auto;
+  }
+
+
+  .header2 .btn { display: block; }
+
+  .nav-open-btn2 { margin-inline-start: auto; }
+
+  .header2 .container2 { gap: 40px; }
+}
+
+
+
+
+@media (min-width: 992px) {
+
+ 
+  .container2 { max-width: 940px; }
+
+
+
+
+}
+
+
+
+
+
+/**
+ * responsive for large than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+
+  .container2 { max-width: 1200px; }
+
+
+
+  /**
+   * HEADER
+   */
+
+  .header2 { padding-block: 24px; }
+
+  .nav-open-btn2,
+  .overlay2,
+  .navbar-top2,
+  .navbar2 .social-list2 { display: none; }
+
+  .navbar2,
+  .navbar2.active,
+  .navbar-list2{
+    all: unset;
+    display: block;
+  }
+
+  .navbar2 { margin-inline-start: auto; }
+
+  .navbar-list2 {
+    display: flex;
+    gap: 8px;
+  }
+
+  .navbar-item2{ border-block-start: none; }
+
+  .navbar-link2{
+    --title-md: 1.8rem;
+    font-weight: var(--fw-500);
+    padding-inline: 16px;
+    text-transform: capitalize;
+  }
+
+
+
+ 
+
+}
+  
+  </style>
+
+
+<body id="top">
+
+
+
+
+
+  <header class="header2" data-header>
+    <div class="container2">
+
+      <a href="#" class="logo">
+        <img src="../log02.svg" width="50" height="46" alt="Doclab home">
+      </a>
+
+      <nav class="navbar2" data-navbar>
+
+        <div class="navbar-top2">
+
+          <a href="#" class="logo">
+            <img src="log02.svg" width="50" height="46" alt="Doclab home">
+          </a>
+
+          <button class="nav-close-btn2" aria-label="clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+        
+
+        <ul class="navbar-list2">
+
+          <li class="navbar-item2">
+              <a href="/dashboard" class="navbar-link2 title-md">Home</a>
+            </li>
+  
+            <li class="navbar-item2">
+           <a href="/dashboard/upcomingapplist" class="navbar-link2 title-md">Appointments</a>
+            </li>
+  
+            <li class="navbar-item2">
+              <a href="/services" class="navbar-link2 title-md">Services</a>
+            </li>
+            <li class="navbar-item2">
+              <a href="/contact" class="navbar-link2 title-md">Contact</a>
+            </li>
+  
+           
+          
+            <li class="navbar-item2">
+              <a href="/logout" class="navbar-link2 title-md">Log out</a>
+            </li>
+
+      </ul>
+
+        <ul class="social-list2">
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn2" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+     
+
+      <div class="overlay2" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+<div class = "start">
+    <ul>
+        <li class = "text-white">Appointments</li>
+    </ul>
+</div>
+  <main>
+    <div class = "sidenavapp">
+        <div class = "inwrap"> 
+        <ul>
+            <li><a href = "/dashboard/upcomingapplist">upcoming appointments</a></li>
+            <li><a href = '/dashboard/cancelledappointments'>cancelled appointmets</a></li>
+            <li><a href = "/dashboard/completedapplist">completed appointments</a></li>
+        </ul>
+    </div>
+    </div>
+  </main>
+
+  <div class="cardbody">
+   
+</div>
+
+ 
+   
+  <!-- footer Start -->
+
+   
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script>
+    
+    let element;
+let data;
+
+const navbar = document.querySelector("[data-navbar]");
+const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+const overlay = document.querySelector("[data-overlay]");
+
+const toggleNav = function () {
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("nav-active");
+}
+const addEventOnElements = function (elements, eventType, callback) {
+  for (let i = 0, len = elements.length; i < len; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
+}
+
+
+addEventOnElements(navTogglers, "click", toggleNav);
+
+
+const header = document.querySelector(".header2");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+const activeElementOnScroll = function () {
+    console.log("hello");
+
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+
+  } else {
+    header.classList.remove("active");
+  
+  }
+}
+
+
+function getstr(number){
+    if(number == 1) return "user";
+    else return "hospital";
+
+
+}
+
+function getdata(){
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:3000/completedlist",
+        success:function(datalist){
+          console.log(datalist);
+           var item =  $(".cardbody");
+           var len = datalist.length;
+           data = datalist;
+           console.log(datalist);
+        
+           for(var i = 0; i< len ; i++){
+            
+            var string1 = `<div class="card">
+            <div class="cardtop" id = "item${i}">
+                <div class="cardimg"><img class="rounded-circle"
+                        src="../SiteAssets/images/people.svg" loading="lazy" ></div>
+                
+            </div>
+           <div class = "patcont">
+               
+                    <p><span class = "setblack">patient name :</span>  ${datalist[i]["patientname"]}</p> 
+                    <p><span class = "setblack">booked on :</span>  ${datalist[i]["bookeddate"]}</p>
+                    <p><span class = "setblack">appointment date: </span> ${datalist[i]["date"]}</p>
+                    <p><span class = "setblack">booked slot : </span> ${datalist[i]["time"]}</p>
+                    <p><span class = "setblack">Assigned doctor : </span> ${datalist[i]['assigndoctor']}</p>
+              
+               
+                  <p><span class = "setblack">type of test :</span> ${datalist[i]["treattype"]}</p>
+                  
+                    <p><span class = "setblack">appointment completed date :</span> ${datalist[i]["completeddate"]}</p>
+                    <p><span class = "setblack">appointment completed time :</span> ${datalist[i]["completedtime"]}</p>
+                   
+                   
+                   
+            </div>
+            
+           
+        </div>`;
+        
+        
+        item.append(string1);
+     
+
+
+
+           }
+
+        },
+        failure:function(){
+            console.log("something error has occured ");
+        }
+
+        }
+    )
+}
+
+$(document).ready( function(e){
+    getdata();})
+
+window.addEventListener("scroll", activeElementOnScroll);
+
+    </script>
+
+  </body>
+  </html>

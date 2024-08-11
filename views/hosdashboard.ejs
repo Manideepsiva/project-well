@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../adminsite/css/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="../adminsite/css/vendors/line-awesome.min.css" />
+    <link rel="stylesheet" href="../adminsite/css/pages/layout.css" />
+    <link rel="icon" href="../adminsite/images/covid-19.ico" />
+    <script src="../adminsite/js/vendors/jquery.min.js"></script>
+    <script src="../adminsite/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="../adminsite/js/global.js"></script>
+    <link rel="stylesheet" href="../adminsite/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="../adminsite/css/vendors/Chart.min.css" />
+    <script src="../adminsite/js/vendors/Chart.bundle.min.js"></script>
+    <script src="../adminsite/js/dashboard.js"></script>
+    <style>
+           .app-stats-card .card-body {
+                                background-color: #419292;
+                                margin: 0;
+                              }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+            <a class="navbar-brand" href="">
+                <img src="../adminsite/images/logo.png" />
+                <span>Wellness Nexus</span>
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link"><i class="las la-question-circle"></i></a></li>
+                    <li class="nav-item dropdown dropleft"><a class="nav-link notification-dropdown" href="#"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                class="badge badge-pill badge-primary"
+                                style="float:right;margin-bottom:-10px;"></span><i class="las la-bell"></i></a>
+                        <div class="dropdown-menu notification-dropdown-menu shadow-lg"
+                            aria-labelledby="notification-dropdown">
+                            <div class="dropdown-title"><a href="">notifications<span
+                                        class="ml-2 notifications-count">(3)</span></a><a class="float-right"
+                                    href="">mark all as read</a></div>
+                            <div class="dropdown-body">
+                                <ul class="list-unstyled">
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">collaboration tools available</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">use the new app launcher</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../adminsite/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">the new dashboard available</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-footer text-center"><a href="notifications.html">view more</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><span class="vertical-divider"></span></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link profile-dropdown" href="/logout"
+                        aria-haspopup="true" aria-expanded="false">logout</a>
+                  
+               </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="side-nav">
+            <ul class="list-group list-group-flush"><a class="list-group-item" href="/hosdashboard"
+                    data-toggle="tooltip" data-placement="bottom" title="Dashboard"
+                    style="background-color: #add2d2; color: #0c0c0c;"><i
+                        class="las la-shapes la-lw"></i><span>dashboard</span></a><a class="list-group-item" href="/specialists" data-toggle="tooltip"
+                    data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                        class="las la-shopping-cart la-lw"></i>
+                    <span>specialists</span></a><a class="list-group-item"
+                    href="/hostodayapp" data-toggle="tooltip" data-placement="bottom" title="Appointment"style= "background-color: #add2d2; color: #0c0c0c;"><i
+                        class="las la-shopping-cart la-lw"></i><span>today Appointments</span></a><a class="list-group-item" href="/hosappointment" data-toggle="tooltip"
+                    data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                        class="las la-shopping-cart la-lw"></i>
+                    <span>Appointment</span></a>
+                    <!-- <a class="list-group-item" href="/notifications"
+                    data-toggle="tooltip" data-placement="bottom" title="Notifications"
+                    style="background-color: #add2d2; color: #0c0c0c;"><i class="las la-sms la-lw"></i>
+                    <span>notifications</span></a> -->
+                    <a class="list-group-item" href="/settings" data-toggle="tooltip"
+                    data-placement="bottom" title="Settings" style="background-color: #add2d2; color: #0c0c0c;"><i
+                        class="las la-cogs la-lw"></i>
+                    <span>settings</span></a>
+                <hr class="divider" />
+                <div class="aob-items">
+
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="section welcome-section">
+                    <div class="section-content">
+                        <div class="card-deck">
+                            <div class="card welcome-content-card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 welcome-text-wrapper align-self-center ">
+                                            <h5 class = "hospname">hello, KIMS Hospital..</h5>
+                                            <p>Welcome to your dashboard</p>
+                                        </div>
+                                        <div class="col-md-6 welcome-img-wrapper"><img
+                                                src="../adminsite/images/hello.svg" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card app-stats-card" style="/* Extra small devices (phones, 600px and down) */
+                            @media only screen and (min-width: 600px) {
+                              .welcome-section .welcome-content-card .card-body .welcome-text-wrapper {
+                                text-align: center;
+                                margin: 0.5em 0;
+                              }
+                              .welcome-section .welcome-content-card .card-body .welcome-text-wrapper h5, 
+                              .welcome-section .welcome-content-card .card-body .welcome-text-wrapper p {
+                                margin-bottom: 0.5em;
+                              }
+                              .welcome-section .welcome-content-card .card-body .welcome-img-wrapper {
+                                text-align: center !important;
+                              }
+                              .welcome-section .welcome-content-card .card-body .welcome-img-wrapper img {
+                                width: 50% !important;
+                              }
+                              .welcome-section .app-stats-card .card-body .col-md-4 {
+                                width: 50%; /* Adjusted from 33.33% to 50% for two columns */
+                              }
+                              .welcome-section .app-stats-card .card-body .col-md-4 .las {
+                                font-size: 2em;
+                              }
+                              .welcome-section .app-stats-card .card-body .col-md-4 p {
+                                margin: 0.35em 0 !important;
+                                font-size: 0.9em;
+                              }
+                              .welcome-section .app-stats-card .card-body .col-md-4 h4 {
+                                font-size: 1.3em;
+                                margin-bottom: 0.5em !important;
+                              }
+                            
+                              .functionality-section .card-deck {
+                                width: 100%;
+                                text-align: center;
+                                padding: 0;
+                              }
+                              .functionality-section .card-deck .card {
+                                width: 45%;
+                                display: inline-block;
+                                margin: 0.25em;
+                                padding: 0;
+                              }
+                              .functionality-section .card-deck .card .card-title i {
+                                font-size: 1.5em;
+                              }
+                              .functionality-section .card-deck .card .card-body {
+                                background-color: #419292;
+                                margin: 0;
+                              }
+                              .functionality-section .card-deck .card .card-body p {
+                                font-size: 0.9em;
+                              }
+                              .functionality-section .card-deck .card .card-footer {
+                                padding: 0.25em 0.5em;
+                              }
+                            
+                              .card-summaries .card-deck {
+                                margin: 0 -0.5em;
+                              }
+                              .card-summaries .card-deck .card {
+                                width: calc(100% - 1em);
+                                margin: 0.5em;
+                              }
+                            
+                              .row.text-center {
+                                display: flex;
+                                justify-content: space-around;
+                              }
+                            }
+                            ">
+                                 <div class="section functionality-section">
+                                    <div class="section-content">
+                                        <div class="card-deck"  id = "adddoctorgo"><a class="card text-center"  style="background: #419292;">
+                                              <div class="card-title">
+                                                    <div class="icon-wrapper"><i class="las la-user-plus"></i></div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>add a Doctor</p>
+                                                </div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section card-summaries">
+                    <div class="section-content">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>recent activities</h5>
+                                </div>
+                                <div class="card-body"><canvas id="recent-activity-chart"></canvas></div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>total bookings</h5>
+                                </div>
+                                <div class="card-body"><canvas id="bookings-chart"></canvas></div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>diseases summary</h5>
+                                </div>
+                                <div class="card-body"><canvas id="diseases-chart"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>top treatments</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ol type="1">
+                                        <li>consultation</li>
+                                        <li>scaling</li>
+                                        <li>root canal</li>
+                                        <li>bleaching</li>
+                                        <li>transplants</li>
+                                        <li>cesarean</li>
+                                        <li>x-rays</li>
+                                    </ol>
+                                </div>
+                                <div class="card-footer"><a class="view-more" href="">more<i
+                                            class="las la-angle-right"></i></a></div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>recent patients</h5>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-hover table-responsive-md table-borderless">
+                                        <tbody class="recentpatientslis">
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Arjun</p><small class="text-muted"></small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">male</p>
+                                                </td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Madhu</p><small class="text-muted"></small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">Female</p>
+                                                </td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Mary</p><small class="text-muted"></small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">Female</p>
+                                                </td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer"><a class="view-more" href="">more<i
+                                            class="las la-angle-right"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Top Doctors</h5>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-borderless table-hover table-responsive-md">
+                                        <tbody class = "doctorsdispla">
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Sharan</p><small class="text-muted">Cardiologist</small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">male</p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>7271289178</p>
+                                                </td>
+                                                <td class="text-right"><button class="btn btn-dark-red-f btn-sm"
+                                                        style="background-color: #419292;">More info</button></td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Priya</p><small class="text-muted">Physician</small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">Female</p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>8271289178</p>
+                                                </td>
+                                                <td class="text-right"><button class="btn btn-dark-red-f btn-sm"
+                                                        style="background-color: #419292;">More info</button></td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>John</p><small class="text-muted">Oncologist</small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">male</p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>9541289178</p>
+                                                </td>
+                                                <td class="text-right"><button class="btn btn-dark-red-f btn-sm"
+                                                        style="background-color: #419292;">More info</button></td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Krish</p><small class="text-muted">dentist</small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">male</p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>6271289178</p>
+                                                </td>
+                                                <td class="text-right"><button class="btn btn-dark-red-f btn-sm"
+                                                        style="background-color: #419292;">More info</button></td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer"><a class="view-more" href="">more<i
+                                            class="las la-angle-right"></i></a></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal onboarding-modal" tabindex="=1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" style="font-style: italic;">Welcome to Nexus admin view</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><i
+                                        class="las la-times-circle"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="carousel slide" id="carouselExampleCaptions" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"><img class="d-block"
+                                                src="../adminsite/images/undraw_dashboard_nklg.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>intuitive<a href="" data-dismiss="modal">Dashboard<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_medicine_b1ol.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>access to<a href="specialists.html">specialists<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_receipt_ecdd.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>simple<a href="Appointment.html">Appointment<i
+                                                            class="las la-external-link-alt"></i></a>process</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_new_notifications_fhvw.svg"
+                                                alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>comprehensive<a href="notifications.html">notification<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div> -->
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../adminsite/images/undraw_Preferences_re_49in.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>minimalist<a href="settings.html">settings<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div>
+                                        </div>
+                                    </div><a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                        data-slide="prev"><i class="las la-chevron-circle-left"></i><span
+                                            class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                        href="#carouselExampleCaptions" role="button" data-slide="next"><i
+                                            class="las la-chevron-circle-right"></i><span
+                                            class="sr-only">Next</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+
+            </footer>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+
+$('#adddoctorgo').click(function() {
+                console.log("in here bro");
+       
+                window.location.href = 'http://localhost:3000/specialists?variable=1';
+    });
+
+
+
+        $(document).ready(function(){
+            getdata();
+            getdata2();
+      
+        });
+
+function getdata2(){
+    
+
+    $.ajax({
+       type:"GET",
+       url:"http://localhost:3000/hospdata2",
+      
+       success:function(data){
+      
+         $(".recentpatientli").html('');
+
+            for(var i = 0; i<data.length;i++){
+           $(".recentpatientli").append(`   <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>Arjun</p><small class="text-muted"></small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">male</p>
+                                                </td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>`)
+                                        }
+
+
+           
+       },
+       error:function()
+       {  console.log('hello there');
+           $('#suggestions1').html("sorry we havent there yet").show();
+           
+       },
+       fail:function(){
+           console.log('im sorry');
+       }
+     });
+}
+
+
+
+function getdata(){
+        $.ajax({
+       type:"GET",
+       url:"http://localhost:3000/hospdata",
+      
+       success:function(data){
+         $(".hospname").text(data[0]["Name of Hospital"]);
+         $(".doctorsdispla").html('');
+
+            for(var i = 0; i<5;i++){
+           $(".doctorsdispla").append(`   <tr>
+                                                <td><img class="rounded-circle" src="../adminsite/images/man.svg"
+                                                        loading="lazy" /></td>
+                                                <td>
+                                                    <p>${data[0]["doctordetails"][i]["doctorname"]}</p><small class="text-muted">${data[0]["doctordetails"][i]["spec"]}</small>
+                                                </td>
+                                                <td>
+                                                    <p class="text-muted">${data[0]["doctordetails"][i]["gender"]}</p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p>${data[0]["doctordetails"][i]["phone"]}</p>
+                                                </td>
+                                                <td class="text-right"><button class="btn btn-dark-red-f btn-sm"
+                                                        style="background-color: #419292;">More info</button></td>
+                                                <td><button class="btn btn-sm"><i
+                                                            class="las la-ellipsis-h"></i></button></td>
+                                            </tr>`)
+                                        }
+
+
+           
+       },
+       error:function()
+       {  console.log('hello there');
+           $('#suggestions1').html("sorry we havent there yet").show();
+           
+       },
+       fail:function(){
+           console.log('im sorry');
+       }
+     });
+    }
+  
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+@import "../themes/colors"
+@import "../layout/section"
+@import "../base/icons"
+@import "../components/cards"
+@import "../components/dropdowns"
+@import "../components/tables"
+@import "../components/buttons"
+@import "../components/labels"
+
+main
+  .title-section
+    margin-left: 1em
+
+  .filters-section
+    display: flex
+
+    .dropdowns-wrapper
+      display: flex
+      margin-right: 1em
+
+      .dropdown:not(:first-of-type), .switch-view-btns
+        margin-left: 1em
+
+      .dropdown
+        a, .btn
+          &::after
+            margin-left: 1.5em
+
+    .switch-view-btns
+      .btn-group
+        i
+          font-size: 1.5em
+          margin: 0
+
+        .active
+          @extend .btn-darker-grey-f
+
+  .patients-card-view
+    .card
+      padding: 1.5em
+      margin-bottom: 1.5em
+
+      .card-header
+        align-items: baseline
+
+        img
+          width: 80px
+          height: 80px
+          object-fit: cover
+
+        a
+          float: right
+          color: $color-dark-red
+          font-size: 1.1em
+
+        .view-more
+          font-size: .8em
+          text-transform: capitalize
+
+      .card-body
+        padding: 1em 0
+
+        h5, p, label
+          text-transform: capitalize
+          margin: 0
+
+        .card-subsection-title
+          margin-bottom: .5em
+
+          p
+            font-size: .9em
+
+        .card-subsection-body
+          label
+            font-size: .8em
+
+          p
+            font-size: .95em
+            font-weight: 500
+            margin-bottom: .5em
+
+      &:hover,
+      &:focus
+        @include shadow-md
+        @include scale
+        @include transition
+        cursor: pointer
+
+  .patients-table-view
+    table, .table
+      thead
+        tr
+          background-color: $color-white
+          @include shadow-sm
+
+          th
+            padding: 1em
+            border: none
+            color: $color-darker-grey
+
+      tbody
+        tr
+          background-color: transparent
+
+          td
+            text-transform: capitalize
+            padding: 1em
+            vertical-align: baseline
+            font-weight: 500
+
+            img
+              width: 30px
+              height: 30px
+              object-fit: cover
+
+            label
+              padding: .25em .5em
+
+          &:hover,
+          &:focus
+            background-color: $color-white
+            @include transition
+            @include shadow-sm-b
+            cursor: pointer
+            border: none
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+  .filters-section
+    display: block !important
+
+    .dropdowns-wrapper
+      margin-bottom: .5em
+
+    .switch-view-btns
+      margin-bottom: .5em
+
+    .buttons-wrapper
+      display: block
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 601px) and (max-width: 768px)
+  .patients-card-view
+    .col-md-3
+      width: 50%
+      max-width: 50%
+      flex: 0 0 50%

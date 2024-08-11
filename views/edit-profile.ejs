@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    
+    <!-- Add CSS styles -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Heading styles */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Label styles */
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        /* Input styles */
+        input {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Button styles */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            background-color: aqua;
+        }
+
+        .save-btn {
+            background-color: #007bff;
+        }
+
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cancel-btn {
+            background-color: #dc3545;
+        }
+
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form id="editProfileForm" action="/edit-profile" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" value="<%= user.firstname %>" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" value="<%= user.lastname %>" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= user.usermail %>" required>
+
+            <label for="organization">phone number:</label>
+            <input type="text" id="organization" name="phone" value="<%= user.phoneno %>">
+
+            <label for="email">Institute name:</label>
+            <input type="email" id="email" name="email" value="<%= user.usermail %>" required>
+
+            <div class="buttons">
+                <button type="button" class="cancel-btn"><a href="/dashboard" style="text-decoration: none;">Cancel</a></button>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Add JavaScript for interactivity -->
+    <script>
+        function cancelEdit() {
+            // Redirect user back to profile page without saving changes
+            window.location.href = '/user/profile';
+        }
+
+        // Additional JavaScript for form validation and other interactions
+        document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            // You can add more client-side validation here if needed
+
+            if (!firstName || !lastName) {
+                event.preventDefault();
+                alert('First Name and Last Name are required fields.');
+            }
+            
+            // Additional validation for email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                event.preventDefault();
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+</body>
+
+</html>

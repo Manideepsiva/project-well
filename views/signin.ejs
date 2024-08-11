@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In</title>
+<link rel="stylesheet" href="signin.css">
+</head>
+<body >
+  <div class  = "container" style="background-color:rgb(83,147,147) ;">
+
+    <form action="/signin" class = "form_details" method="post">
+    <h1> Log in</h1>
+    <p> New to nexus? <a href="/signup">Sign up </a></p>
+    <div class = "input">
+    <input type = "email" placeholder="Email address" name="usermail" required >
+  </div>
+  <br>
+
+  <div class = "input">
+    <input type="password" placeholder="Password" name="password" required>
+  </div>
+  <div >
+   
+    <p style="display: inline-block; margin-left: 290px;"> <%= errors %></p>
+
+    </div>
+
+    <button type="submit">LOG IN</button>
+  </form>
+  
+  <p>________________________________OR__________________________________</p>
+  <br> 
+  <button class = "google" type="button" ><a href="/googlein">Sign in with Google</a></button>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src = "login.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

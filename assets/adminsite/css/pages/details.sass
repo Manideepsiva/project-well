@@ -1,0 +1,301 @@
+@import "../themes/colors"
+@import "../base/icons"
+@import "../layout/section"
+@import "../components/cards"
+@import "../components/labels"
+@import "../components/buttons"
+
+.title-section
+  vertical-align: center
+  padding: 0
+  border-bottom: 1px solid $color-lighter-grey
+
+  & > .col-md-8,
+  & > .col-md-4
+    padding: 0
+    text-align: right
+
+  nav
+    padding: 0
+
+  .breadcrumb
+    margin: 0
+    background-color: transparent
+
+    .breadcrumb-item
+      text-transform: capitalize
+      font-weight: 500
+
+      a
+        color: $color-dark-red
+
+        &:hover,
+        &:focus
+          text-decoration: none
+
+  button
+    margin-top: .35em
+
+.patient-details-section
+  .patients-details-card-wrapper
+    border-left: 1px solid $color-light-grey
+
+  .card
+    margin-bottom: 1.5em
+
+  .mini-card
+    .card-header
+      img
+        width: 80px
+        height: 80px
+        object-fit: cover
+        margin-bottom: .5em
+
+    .card-body
+      margin-bottom: .5em
+
+      h4, h5, small, p
+        padding: 0 0 .25em 0
+        margin: 0
+        text-transform: capitalize
+
+      input
+        border-radius: 0
+        text-transform: capitalize
+
+    .card-footer
+      button
+        width: 100%
+
+  .nav, .nav-tabs
+    border-bottom: 1px solid $color-light-grey
+
+    li, .nav-item
+      a, .nav-link
+        border: none
+        font-weight: 600
+        text-transform: capitalize
+        color: $color-darker-grey
+        border-radius: 0
+
+      .active
+        background-color: $color-white
+        color: $color-dark-red
+        border-bottom: 2px solid $color-dark-red
+
+  .tab-content
+    background-color: $color-white-ish
+
+    .tab-pane
+      margin-top: 1em
+
+      .section-title
+        border-bottom: 1px solid $color-lighter-grey
+        padding: 1em
+        text-align: right
+
+      .media
+        border-bottom: 1px solid $color-lighter-grey
+        padding: .5em 1em
+
+        .align-self-center
+          border-right: 1.5px solid $color-lighter-grey
+          padding: 1em
+          margin-right: 1em
+
+          p, h3
+            margin: 0
+            text-align: right
+            text-transform: capitalize
+            color: $color-darker-grey
+
+        .media-body
+          .row
+            margin: 0 .5em
+            padding: .5em 0
+
+            label:not(.label-sm), p
+              width: 19%
+              font-weight: 500
+
+            label, p
+              font-size: .85em
+              padding-left: .5em
+              text-transform: capitalize
+              font-weight: 500
+
+            label
+              height: 40px
+
+              &:nth-of-type(1)
+                border-top-right-radius: 5px
+                border-bottom-right-radius: 5px
+                padding-top: .75em
+
+              &:nth-of-type(2)
+                border-radius: 5px
+
+              i
+                margin-right: .5em
+
+            .label-sm
+              text-align: center
+              padding-top: .75em
+              font-weight: 500
+
+            .btn
+              padding: .25em
+
+            a
+              width: 5%
+              text-align: center
+
+            p, a
+              padding-top: .5em
+              color: $color-dark-grey
+              text-align: center
+              margin: 0
+
+              i
+                vertical-align: center
+                margin-right: .5em
+                font-size: 1em
+
+  .files-card, .notes-card
+    .card-header
+      h5
+        button
+          float: right
+
+    .card-body
+      margin: 1em 0
+
+  .notes-card
+    .card-body
+      background-color: $color-white-ish
+      padding: .5em
+
+      textarea, .form-control
+        border-radius: 0
+        background-color: transparent
+        border: none
+        margin-bottom: 1em
+
+    .card-footer
+      text-transform: capitalize
+
+      .float-left
+        i
+          color: $color-dark-red
+          margin-right: .5em
+
+  .files-card
+    .card-body
+      .list-group
+        .list-group-item
+          padding: 1em .5em
+          text-transform: capitalize
+          color: $color-darker-grey
+          border: 1px solid $color-lighter-grey
+          margin: .25em 0
+
+          .float-right
+            small, .text-muted
+              text-transform: uppercase
+
+          &:hover,
+          &:focus
+            text-decoration: none
+            border-color: transparent
+            @include shadow-md
+            @include transition
+
+            small, .text-muted
+              display: none
+
+            .action-buttons
+              display: block
+              @include transition
+
+              button
+                padding: .25em
+                text-align: center
+                margin-right: .2em
+
+                i
+                  vertical-align: bottom
+                  text-align: right
+                  margin: 0
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+  .title-section
+    .col-md-8, .col-md-4
+      width: 50%
+      padding: 0
+
+    .col-md-8
+      .breadcrumb
+        .breadcrumb-item
+          padding-left: 0
+
+    .col-md-4
+      text-align: right
+
+      button
+        margin-bottom: .5em
+
+  .patient-details-section
+    .patients-details-card-wrapper
+      border: none
+
+    .mini-card
+      margin-bottom: 1em
+
+    .nav, .nav-tabs
+      display: flex
+      flex-wrap: nowrap
+      overflow-y: auto
+
+      li, .nav-item
+        list-style-type: none
+
+    .tab-content
+      .tab-pane
+        .section-title
+          text-align: center
+
+        .media
+          padding: 0
+          display: block
+          flex-wrap: nowrap
+          align-items: normal
+
+          .align-self-center, .media-body
+            width: 100%
+            display: block
+            margin: 0
+
+          .align-self-center
+            border-right: 0
+
+            h3, p
+              text-align: center
+
+          .media-body
+            .row
+              display: block
+              margin: 0
+
+              label, p, i
+                width: 100% !important
+                height: 100%
+                padding: .5em
+                text-align: center
+
+
+    .files-card
+      .list-group
+        .list-group-item
+          .float-right
+            float: none !important

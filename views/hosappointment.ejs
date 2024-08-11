@@ -1,0 +1,962 @@
+<html>
+
+<head>
+    <title>Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../SiteAssets/css/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="../SiteAssets/css/vendors/line-awesome.min.css" />
+    <link rel="stylesheet" href="../SiteAssets/css/pages/layout.css" />
+    <link rel="icon" href="../SiteAssets/images/covid-19.ico" />
+    <script src="../SiteAssets/js/vendors/jquery.min.js"></script>
+    <script src="../SiteAssets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="../SiteAssets/js/global.js"></script>
+    <link rel="stylesheet" href="../SiteAssets/css/pages/patients.css" />
+    <script src="../SiteAssets/js/patients.js"></script>
+
+    <style>
+         .dialo{
+        position: fixed;
+        margin-left: 28%;
+        top: 0;
+        width: 40%;
+         display: none;
+        margin-top: 20%;
+        background-color: red;
+        z-index: 400;
+        
+    }
+    .covercon{
+        position: fixed;
+        width:100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.5); 
+        display: none;
+        top:0;
+        left:0;
+        z-index: 3000;
+        
+    }
+    .opendiscancel{
+        display: block;
+     
+    }
+    .buttflex{
+    display: flex;
+    justify-content:space-between;
+  }
+  
+
+    .wrappingman{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 25px 25px 30px;
+  box-shadow: 8px 8px 10px rgba(0,0,0,0.06);
+}
+.wrappingman h2{
+  color: #4671EA;
+  font-size: 28px;
+  text-align: center;
+}
+.wrappingman textarea{
+  width: 100%;
+  resize: none;
+  height: 140px;
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  max-height: 330px;
+  caret-color: #4671EA;
+  border: 1px solid #bfbfbf;
+}
+textarea::placeholder{
+  color: #b3b3b3;
+}
+textarea:is(:focus, :valid){
+  padding: 14px;
+  border: 2px solid #4671EA;
+}
+textarea::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+
+.dialo2{
+        position: fixed;
+        margin-left: 28%;
+        top: 0;
+        width: 40%;
+         display: none;
+        margin-top: 20%;
+        background-color: red;
+        z-index: 400;
+        
+    }
+    .covercon2{
+        position: fixed;
+        width:100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.5); 
+        display: none;
+        top:0;
+        left:0;
+        z-index: 3000;
+        
+    }
+  
+  
+
+    .wrappingman2{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 25px 25px 30px;
+  box-shadow: 8px 8px 10px rgba(0,0,0,0.06);
+}
+.wrappingman2 h2{
+  color: #4671EA;
+  font-size: 28px;
+  text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top"><a class="navbar-brand" href=""><img
+                    src="../SiteAssets/images/logo.png" /><span>Wellness Nexus</span></a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link"><i class="las la-question-circle"></i></a></li>
+                    <li class="nav-item dropdown dropleft"><a class="nav-link notification-dropdown" href="#"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                class="badge badge-pill badge-primary"
+                                style="float:right;margin-bottom:-10px;"></span><i class="las la-bell"></i></a>
+                        <div class="dropdown-menu notification-dropdown-menu shadow-lg"
+                            aria-labelledby="notification-dropdown">
+                            <div class="dropdown-title"><a href="">notifications<span
+                                        class="ml-2 notifications-count">(3)</span></a><a class="float-right"
+                                    href="">mark all as read</a></div>
+                            <div class="dropdown-body">
+                                <ul class="list-unstyled">
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../SiteAssets/images/logo.png" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">collaboration tools available</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../SiteAssets/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">use the new app launcher</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                    <li class="media"><a class="notification-card" href=""><img class="mr-3"
+                                                src="../SiteAssets/images/inbox.svg" alt="..." />
+                                            <div class="media-body">
+                                                <h6 class="mt-0 mb-1">the new dashboard abailable</h6>
+                                                <p>Cras sit amet nibh libero, in gravida nulla.</p><small
+                                                    class="text-muted">21.03.2020, 13.02</small>
+                                            </div>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-footer text-center"><a href="notifications.html">view more</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><span class="vertical-divider"></span></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link profile-dropdown" href="/logout"
+                             aria-haspopup="true" aria-expanded="false">logout</a>
+                       
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="side-nav">
+            <ul class="list-group list-group-flush"><a class="list-group-item" href="/hosdashboard"
+                data-toggle="tooltip" data-placement="bottom" title="Dashboard"
+                style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shapes la-lw"></i><span>dashboard</span></a><a class="list-group-item" href="/specialists" data-toggle="tooltip"
+                data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i>
+                <span>specialists</span></a><a class="list-group-item"
+                href="/hostodayapp" data-toggle="tooltip" data-placement="bottom" title="Appointment"style= "background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i><span>today Appointments</span></a><a class="list-group-item" href="/hosappointment" data-toggle="tooltip"
+                data-placement="bottom" title="Appointment" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-shopping-cart la-lw"></i>
+                <span>Appointment</span></a><a class="list-group-item" href="/settings" data-toggle="tooltip"
+                data-placement="bottom" title="Settings" style="background-color: #add2d2; color: #0c0c0c;"><i
+                    class="las la-cogs la-lw"></i>
+                <span>settings</span></a>
+            <hr class="divider" />
+            <div class="aob-items">
+
+        </ul>
+        </div>
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="section title-section">
+                 
+                </div>
+                <div class="section filters-section">
+                    <div class="dropdowns-wrapper">
+                        <div class="dropdown" id = "butupcoming"><a class="btn btn-dark-red-o " href="#" role="button"
+                                 aria-haspopup="true" aria-expanded="false">uppcoming appointments</a>
+                         
+                        </div>
+                        <div class="dropdown" id = "butpending"><a class="btn btn-dark-red-o " href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">pending appointments</a>
+                    
+                   </div>
+                        
+                        <div class="dropdown" id = "butcompleted"><a class="btn btn-dark-red-o" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">completed appointments</a>
+                           
+                        </div>
+                        <div class="dropdown" id = "butcancelled"><a class="btn btn-dark-red-o" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">cancelled appointments</a>
+                       
+                    </div>
+                    </div>
+                 
+                    <div class="buttons-wrapper ml-auto"style= "background-color: #add2d2; color: #0c0c0c;"><button class="btn btn-dark-red-f-gr"><i
+                                class="las la-plus-circle"></i>add a new patient</button></div>
+                </div>
+                <div class="section patients-card-view">
+                    
+                        
+                        <div class = "upcomingaapplist">
+                            <div class = "upcomingfeedback"></div>
+                            <div class = "upcomingappdata row">
+                       
+                    </div>
+
+                    </div>
+                    <div class = "pendingapplist">
+                        <div class = "pendingfeedback"></div>
+                        <div class = "pendingappdata row"></div>
+ 
+
+                    </div>
+                    <div class = "completedapplist">
+                        <div class = "completedfeedback"></div>
+                        <div class = "completedappdata row"></div>
+                    </div>
+                    <div class = "cancelledapplist">
+                        <div class = "cancelledfeedback"></div>
+                        <div class = "cancelledappdata row"></div>
+                    </div>
+                    
+                </div>
+                <div class="section patients-table-view no-display">
+                    <table class="table table-hover table-responsive-lg">
+                        <thead>
+                            <tr>
+                                <th>patient ID</th>
+                                <th>patient name</th>
+                                <th>age</th>
+                                <th>date of birth</th>
+                                <th>diagnosis</th>
+                                <th>triage</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-orange">urgent</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-green">non urgent</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-blue">resuscitation</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-pink">emergency</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-orange">urgent</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-green">non urgent</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-blue">resuscitation</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2189178</td>
+                                <td><img class="rounded-circle" src="../SiteAssets/images/people.svg"
+                                        loading="lazy" /><span class="ml-2">example name</span></td>
+                                <td>29 yo</td>
+                                <td>21/03/1992</td>
+                                <td>cancer</td>
+                                <td><label class="label-pink">emergency</label></td>
+                                <td><a class="view-more btn btn-sm btn-dark-red-f" href="details.html">view profile</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal onboarding-modal" tabindex="=1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Welcome</h5><button class="close" type="button"
+                                    data-dismiss="modal" aria-label="Close"><i class="las la-times-circle"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="carousel slide" id="carouselExampleCaptions" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"><img class="d-block"
+                                                src="../SiteAssets/images/undraw_dashboard_nklg.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>intuitive<a href="" data-dismiss="modal">dashboard<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../SiteAssets/images/undraw_medicine_b1ol.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>access to<a href="specialists.html">specialists<i
+                                                            class="las la-external-link-alt"></i></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../SiteAssets/images/undraw_receipt_ecdd.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>simple<a href="Appointment.html">Appointment<i
+                                                            class="las la-external-link-alt"></i></a>process</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../SiteAssets/images/undraw_new_notifications_fhvw.svg"
+                                                alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>comprehensive<a href="notifications.html">notification<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item"><img class="d-block"
+                                                src="../SiteAssets/images/undraw_Preferences_re_49in.svg" alt="..." />
+                                            <div class="carousel-caption d-md-block">
+                                                <p>minimalist<a href="settings.html">settings<i
+                                                            class="las la-external-link-alt"></i></a>center</p>
+                                            </div>
+                                        </div>
+                                    </div><a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                        data-slide="prev"><i class="las la-chevron-circle-left"></i><span
+                                            class="sr-only">Previous</span></a><a class="carousel-control-next"
+                                        href="#carouselExampleCaptions" role="button" data-slide="next"><i
+                                            class="las la-chevron-circle-right"></i><span
+                                            class="sr-only">Next</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <div class = "covercon">
+        <div class = "dialo">
+            <div class="wrappingman">
+                <h2>Give us a reason why you want to cancel appointment?</h2>
+                <textarea spellcheck="false" id="reasoncont" placeholder="Type something here..." required></textarea>
+                <br><br>
+                <div class = "buttflex">
+                   
+                    <div class="dropdown" id ="diaclose" ><a class="btn btn-dark-red-o" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">close</a></div>
+
+                        <div class="dropdown" id = "cancelappoin"><a class="btn btn-dark-red-o" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">cancel appointment</a></div>
+               
+                   </div>
+              </div></div></div>
+
+
+              <div class = "covercon2">
+                <div class = "dialo2">
+                    <div class="wrappingman2">
+                        <h2>does patient appointment is completed?</h2>
+                        <br><br>
+                        
+                        <div class = "buttflex" style="display:flex; justify-content: space-between;">
+                           
+                            <div class="dropdown" id ="diaclose2" ><a class="btn btn-dark-red-o" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">close</a></div>
+        
+                                <div class="dropdown" id = "markasdone2"><a class="btn btn-dark-red-o" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">yes(mark as done)</a></div>
+                       
+                           </div>
+                      </div></div></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+var cancelledele;
+var penorup;
+
+function isDateAhead(inputDateStr) {
+    // Parse the input date string
+    const inputDate = new Date(inputDateStr);
+    
+    // Get the current date
+    const currentDate = new Date();
+    
+    // Compare the input date with the current date
+    if (inputDate > currentDate) {
+        // Input date is ahead of the current date
+        return 1;
+    } else {
+        // Input date is not ahead of the current date
+        return 0;
+    }
+}
+
+function isBefore(inputDateStr) {
+    // Parse the input date string
+    const inputDate = new Date(inputDateStr);
+
+    // Get the current date
+    const currentDate = new Date();
+
+    // Extract year, month, and day components from the input date
+    const inputYear = inputDate.getFullYear();
+    const inputMonth = inputDate.getMonth();
+    const inputDay = inputDate.getDate();
+
+    // Extract year, month, and day components from the current date
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+    const currentDay = currentDate.getDate();
+
+    // Create new Date objects with only year, month, and day components
+    const inputDateOnly = new Date(inputYear, inputMonth, inputDay);
+    const currentDateOnly = new Date(currentYear, currentMonth, currentDay);
+
+    // Compare the input date (date only) with the current date (date only)
+    if (inputDateOnly < currentDateOnly) {
+        // Input date is ahead of the current date
+        return 1;
+    } else {
+        // Input date is not ahead of the current date
+        return 0;
+    }
+}
+
+function extractNumberFromString(inputString) {
+    // Split the input string by "-"
+    const parts = inputString.split("-");
+
+    // Get the last part of the split array, which should be the number part
+    const numberStr = parts[parts.length - 1];
+
+    // Convert the number string to an actual number (integer)
+    const number = parseInt(numberStr);
+
+    // Return the extracted number
+    return number;
+}
+
+
+
+        var upcomingappointmentlist = [];
+        var pendingappointlist = [];
+        var completedlist = [];
+        var cancelledlist = [];
+    function getdata(){
+        $.ajax({
+            
+            type:"GET",
+            url:"http://localhost:3000/hosupcomingapp",
+            success:function(datalist){
+
+                 upcomingappointmentlist = [];
+         pendingappointlist = [];
+        completedlist = [];
+        cancelledlist = [];
+            
+
+                $(".todayapp").html('');
+               var len = datalist.length;
+               data = datalist;
+               console.log(datalist);
+               if(len == 0){
+                $(".feedback").text("no appointments booked")
+               
+
+               }
+               else{
+
+                for(var i =0;i<len;i++){
+              if(datalist[i]["appointmentdone"] == 1){
+                  completedlist.push(datalist[i])
+
+              }
+
+              else if(datalist[i]['appointmentcancel'] == 1){
+                    cancelledlist.push(datalist[i])
+              }
+              else{
+                var appdate = datalist[i]["date"];
+                var returntype = isDateAhead(appdate);
+                var beforetype = isBefore(appdate);
+                if(returntype == 1){
+                    upcomingappointmentlist.push(datalist[i])
+
+                }
+                else if(beforetype == 1)
+                {
+                    pendingappointlist.push(datalist[i]);
+                }
+
+              }
+
+                }
+
+               }
+            
+             render();
+    
+            },
+            failure:function(){
+                console.log("something error has occured ");
+            }
+    
+            }
+        )
+    }
+    
+
+    
+
+    function render(){
+        if(upcomingappointmentlist.length == 0){
+            $(".upcomingappdata").html('');
+            $(".upcomingfeedback").text("No Appointments Booked")
+
+        }
+        if(upcomingappointmentlist.length >0){
+            $(".upcomingappdata").html('');
+            var len = upcomingappointmentlist.length;
+            for(var i = 0;i<len;i++){
+            $(".upcomingappdata").append(`<div class="col-md-4 upcomingitem${i}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-img-top"><img class="rounded-circle"
+                                            src="../SiteAssets/images/people.svg" loading="lazy" /><a class="view-more"
+                                            href="details.html">view profile</a></div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-subsection-title">
+                                       <p>patient name: ${upcomingappointmentlist[i]["patientname"]}</p>
+                                       <p> appointment date : ${upcomingappointmentlist[i]["date"]}</p>
+                                    
+                                    </div>
+                                    <div class="card-subsection-body"><label class="text-muted">booked slot </label>
+                                        <p>${upcomingappointmentlist[i]["time"]}</p><label class="text-muted">assigned doctor</label>
+                                        <p>${upcomingappointmentlist[i]["assigndoctor"]}</p><label class="text-muted">type of treatment</label>
+                                        <p>${upcomingappointmentlist[i]["treattype"]}</p>
+                                        <div class="dropdown" id = "cancelappointmentbutupcom-${i}"><a class="btn btn-dark-red-o" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">cancel appointment</a>
+                                   
+                                </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>`);
+                    $(`#cancelappointmentbutupcom-${i}`).on('click',function(){
+
+                        var extnumber = $(this).attr('id');
+                        var id = extractNumberFromString(extnumber);
+                        cancelledele = id;
+                        penorup = 1;
+
+                        $(".dialo").addClass("opendiscancel");
+                        $(".covercon").addClass("opendiscancel");
+
+
+                    })
+                    }
+
+
+
+        }
+
+        if(pendingappointlist.length == 0){
+            $(".pendingappdata").html('');
+            $(".pendingfeedback").text("no appointments were pending");
+        }
+        if(pendingappointlist.length > 0){
+
+            $(".pendingappdata").html('');
+            var len = pendingappointlist.length;
+            for(var i = 0;i<len;i++){
+            $(".pendingappdata").append(`<div class="col-md-4 pendingitem${i}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-img-top"><img class="rounded-circle"
+                                            src="../SiteAssets/images/people.svg" loading="lazy" /><a class="view-more"
+                                            href="details.html">view profile</a></div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-subsection-title">
+                                       <p>patient name: ${pendingappointlist[i]["patientname"]}</p>
+                                       <p> appointment date : ${pendingappointlist[i]["date"]}</p>
+                                    
+                                    </div>
+                                    <div class="card-subsection-body"><label class="text-muted">booked slot </label>
+                                        <p>${pendingappointlist[i]["time"]}</p><label class="text-muted">assigned doctor</label>
+                                        <p>${pendingappointlist[i]["assigndoctor"]}</p><label class="text-muted">type of treatment</label>
+                                        <p>${pendingappointlist[i]["treattype"]}</p>
+                                        <div style="display:flex; justify-content: space-between;">
+
+                                        <div class="dropdown" id = "markasdonependingbut-${i}"><a class="btn btn-dark-red-o" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">mark as done</a>
+                                   
+                                </div>
+                                <div class="dropdown" id = "markappointmencancelbutupcom-${i}"><a class="btn btn-dark-red-o" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">cancel appointment</a>
+                                   
+                                </div></div>
+                                    </div>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>`);
+                    
+                        $(`#markappointmencancelbutupcom-${i}`).on('click',function(){
+                   
+
+var extnumber = $(this).attr('id');
+var id = extractNumberFromString(extnumber);
+cancelledele = id;
+penorup = 2;
+
+$(".dialo").addClass("opendiscancel");
+$(".covercon").addClass("opendiscancel");
+
+
+});
+
+
+$(`#markasdonependingbut-${i}`).on('click',function(){
+    
+    console.log("hello there");
+var extnumber = $(this).attr('id');
+var id = extractNumberFromString(extnumber);
+cancelledele = id;
+penorup = 2;
+
+$(".dialo2").show();
+$(".covercon2").show();
+
+
+})
+
+}
+
+        }
+
+        if(completedlist.length == 0){
+            $(".completedappdata").html('');
+            $(".completedfeedback").text("no appointments were completed");
+        }
+
+        if(completedlist.length > 0){
+
+$(".completedappdata").html('');
+console.log(completedlist);
+var len = completedlist.length;
+for(var i = 0;i<len;i++){
+$(".completedappdata").append(`<div class="col-md-4 cancelleditem${i}">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-img-top"><img class="rounded-circle"
+                                src="../SiteAssets/images/people.svg" loading="lazy" /><a class="view-more"
+                                href="details.html">view profile</a></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-subsection-title">
+                            <label class="text-muted">patient name</label>
+                           <p>${completedlist[i]["patientname"]}</p>
+                           <label class="text-muted"> appointment completed date : </label>   <p>${completedlist[i]["completeddate"]}</p>
+                        
+                        </div>
+                        <div class="card-subsection-body"><label class="text-muted">appointment completed time </label>
+                            <p>${completedlist[i]["completedtime"]}</p><label class="text-muted">assigned doctor</label>
+                            <p>${completedlist[i]["assigndoctor"]}</p><label class="text-muted">type of treatment</label>
+                            <p>${completedlist[i]["treattype"]}</p>
+                          
+
+                   
+                       
+                    </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>`)}
+
+}
+
+
+if(cancelledlist.length == 0){
+    $(".cancelledappdata").html('');
+    $(".cancelledfeedback").text('no appointments were cancelled');
+}
+
+if(cancelledlist.length>0){
+    console.log("im in cancel list and not working");
+
+    $(".cancelledappdata").html('');
+var len = cancelledlist.length;
+for(var i = 0;i<len;i++){
+$(".cancelledappdata").append(`<div class="col-md-4 cancelleditem${i}">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-img-top"><img class="rounded-circle"
+                                src="../SiteAssets/images/people.svg" loading="lazy" /><a class="view-more"
+                                href="details.html">view profile</a></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-subsection-title">
+                            <label class="text-muted">patient name</label>
+                           <p>${cancelledlist[i]["patientname"]}</p>
+                           <label class="text-muted"> appointment cancelled date : </label>   <p>${cancelledlist[i]["cancelleddate"]}</p>
+                        
+                        </div>
+                        <div class="card-subsection-body"><label class="text-muted">appointment cancelled time </label>
+                            <p>${cancelledlist[i]["cancelledtime"]}</p><label class="text-muted">assigned doctor</label>
+                            <p>${cancelledlist[i]["assigndoctor"]}</p><label class="text-muted">type of treatment</label>
+                            <p>${cancelledlist[i]["treattype"]}</p>
+                            <label class="text-muted">cancelled by </label><p>${cancelledlist[i]["cancelledby"]} </p>
+                               
+                                <label class="text-muted">Cancellation Reason : ${cancelledlist[i]["reason"]} </label> 
+
+                   
+                       
+                    </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>`)}
+
+
+
+}
+
+
+
+
+
+        
+    }
+
+
+
+    $("#cancelappoin").on('click',function(){
+        var id = cancelledele;
+        var hos;
+        if(penorup == 1){
+             hos = upcomingappointmentlist[id]["_id"];}
+
+        else if(penorup == 2){
+            hos = pendingappointlist[id]["_id"]
+        }
+            var reas = $('#reasoncont').val();
+        
+
+
+            $.ajax({
+        type:"GET",
+        url:"http://localhost:3000/hoscancelapplist",
+        data:{id:hos,reason:reas},
+        success:function(datalist){
+            getdata();
+            render();
+    $(".dialo").removeClass("opendiscancel");
+    $(".covercon").removeClass("opendiscancel");
+    $('#reasoncont').val("");
+            
+},
+
+    failure:function(){
+        console.log("couldnt cancell appointment please try again later");
+    }});
+
+        
+
+
+    
+
+    });
+
+    $("#markasdone2").on('click',function(){
+var id = cancelledele;
+var hos = pendingappointlist[id]["_id"];
+$.ajax({
+        type:"GET",
+        url:"http://localhost:3000/hosmarkasdone",
+        data:{id:hos},
+        success:function(datalist){
+            getdata();
+            render();
+    $(".dialo2").hide();
+    $(".covercon2").hide();
+   
+            
+},
+
+    failure:function(){
+        console.log("couldnt cancell appointment please try again later");
+    }});
+
+    })
+
+
+    $("#diaclose2").on('click',function(){
+        $(".dialo2").hide();
+    $(".covercon2").hide();
+
+    });
+
+
+    $("#diaclose").on('click',function(){
+        $(".dialo").removeClass("opendiscancel");
+    $(".covercon").removeClass("opendiscancel");
+    $('#reasoncont').val("");
+
+    })
+
+
+
+
+    $(document).ready( function(e){
+        getdata();
+        $(".upcomingaapplist").show();
+        $(".pendingapplist").hide();
+        $(".completedapplist").hide();
+        $(".cancelledapplist").hide();
+
+
+        $("#butupcoming").on('click',function(){
+            $(".upcomingaapplist").show();
+        $(".pendingapplist").hide();
+        $(".completedapplist").hide();
+        $(".cancelledapplist").hide();
+
+        })
+
+        $("#butpending").on('click',function(){
+            $(".upcomingaapplist").hide();
+        $(".pendingapplist").show();
+        $(".completedapplist").hide();
+        $(".cancelledapplist").hide();
+
+
+        })
+
+
+        $("#butcompleted").on('click',function(){
+            $(".upcomingaapplist").hide();
+        $(".pendingapplist").hide();
+        $(".completedapplist").show();
+        $(".cancelledapplist").hide();
+
+
+        })
+
+        $("#butcancelled").on('click',function(){
+            $(".upcomingaapplist").hide();
+        $(".pendingapplist").hide();
+        $(".completedapplist").hide();
+        $(".cancelledapplist").show();
+
+
+        })
+
+    })
+
+
+
+
+        </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+@import "../themes/colors"
+@import "../layout/section"
+@import "../base/icons"
+@import "../components/cards"
+@import "../components/dropdowns"
+@import "../components/tables"
+@import "../components/buttons"
+
+main
+  .card
+    .card-header
+      margin-bottom: 1em
+
+  .notifications-section
+    .card
+      .title
+        text-transform: capitalize
+        margin: 1em
+
+      .media
+        padding: 1em
+        border-bottom: 1.5px solid $color-lighter-grey
+        border-top: 1.5px solid transparent
+        border-left: 1.5px solid transparent
+        border-right: 1.5px solid transparent
+        margin-bottom: .5em
+
+        img
+          width: 50px
+          height: 50px
+
+        .media-body
+          font-weight: 500
+
+          p
+            margin: 0
+
+          a
+            text-transform: capitalize
+            color: $color-dark-red
+
+            &:hover,
+            &:focus
+              text-decoration: none
+              font-weight: bold
+
+          span, a
+            font-size: .95em
+
+        &:hover,
+        &:focus
+          border: 1.5px solid $color-dark-red
+
+      .card-footer
+        padding: 1em
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+  .tags-section
+    margin-bottom: 1em
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 601px) and (max-width: 768px)
+  .tags-section
+    margin-bottom: 1em
+
+    .card-body
+      button
+        text-align: left

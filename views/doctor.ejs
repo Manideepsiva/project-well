@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title> &amp; </title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Health Care Medical Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Novena HTML Template v1.0">
+
+  <!-- Favicon -->
+
+  <!-- 
+  Essential stylesheets
+  =====================================-->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="icofont/icofont.min.css">
+  <link rel="stylesheet" href="slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="slick-carousel/slick/slick-theme.css">
+
+
+
+  <link rel="stylesheet" href="style2.css">
+  <style>
+  ion-icon { display: block; }
+  li { list-style: none; }
+
+    body.nav-active { overflow: hidden; }
+    .header2 .btn { display: none; }
+  
+  .header2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 16px;
+    z-index: 4;
+  }
+  
+  .header2.active {
+    position: fixed;
+    background-color: var(--rich-black-fogra-29);
+    animation: headerActive 0.5s ease forwards;
+  }
+  
+  @keyframes headerActive {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .header2 .container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-open-btn2 {
+    color: var(--white);
+    font-size: 4rem;
+  }
+  
+  .navbar2,
+  .overlay2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .navbar2 {
+    right: -300px;
+    max-width: 300px;
+    background-color: var(--rich-black-fogra-29);
+    z-index: 3;
+    transition: 0.25s var(--cubic-in);
+    visibility: hidden;
+  }
+  
+  .navbar2.active {
+    transform: translateX(-300px);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+  }
+  
+  .navbar-top2 {
+    position: relative;
+    padding-inline: 25px;
+    padding-block: 55px 100px;
+  }
+  
+  .nav-close-btn2{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--white);
+    font-size: 2.8rem;
+  }
+  
+  .navbar-list2 {
+    margin-block-end: 30px;
+    border-block-end: 1px solid var(--white_a10);
+  }
+  
+  .navbar-item2 { border-block-start: 1px solid var(--white_a10); }
+  
+  .navbar-link2{
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 10px 24px;
+  }
+  
+  .social-list2 {
+    justify-content: center;
+    gap: 20px;
+    color: var(--white);
+    font-size: 1.8rem;
+  }
+  
+  .overlay2 {
+    right: -100%;
+    background-color: var(--black);
+    opacity: 0.3;
+    visibility: hidden;
+    transition: var(--transition-2);
+    z-index: 2;
+  }
+  
+  .overlay2.active {
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+  .title-md { font-size: var(--title-md); }
+
+
+  @media (min-width: 768px) {
+  
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --headline-lg: 8rem;
+    --headline-md: 4.8rem;
+
+  }
+
+  .container2 {
+    max-width: 750px;
+    width: 100%;  
+    margin-inline: auto;
+  }
+
+
+  .header2 .btn { display: block; }
+
+  .nav-open-btn2 { margin-inline-start: auto; }
+
+  .header2 .container2 { gap: 40px; }
+}
+
+
+
+
+@media (min-width: 992px) {
+
+ 
+  .container2 { max-width: 940px; }
+
+
+
+
+}
+
+
+
+
+
+/**
+ * responsive for large than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+
+  .container2 { max-width: 1200px; }
+
+
+
+  /**
+   * HEADER
+   */
+
+  .header2 { padding-block: 24px; }
+
+  .nav-open-btn2,
+  .overlay2,
+  .navbar-top2,
+  .navbar2 .social-list2 { display: none; }
+
+  .navbar2,
+  .navbar2.active,
+  .navbar-list2{
+    all: unset;
+    display: block;
+  }
+
+  .navbar2 { margin-inline-start: auto; }
+
+  .navbar-list2 {
+    display: flex;
+    gap: 8px;
+  }
+
+  .navbar-item2{ border-block-start: none; }
+
+  .navbar-link2{
+    --title-md: 1.8rem;
+    font-weight: var(--fw-500);
+    padding-inline: 16px;
+    text-transform: capitalize;
+  }
+
+
+
+ 
+
+}
+  
+  </style>
+
+
+<body id="top">
+
+
+
+
+
+  <header class="header2" data-header>
+    <div class="container2">
+
+      <a href="#" class="logo">
+        <img src="log02.svg" width="50" height="46" alt="Doclab home">
+      </a>
+
+      <nav class="navbar2" data-navbar>
+
+        <div class="navbar-top2">
+
+          <a href="#" class="logo">
+            <img src="log02.svg" width="100" height="60" alt="Doclab home">
+          </a>
+
+          <button class="nav-close-btn2" aria-label="clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+        <ul class="navbar-list2">
+
+            <li class="navbar-item2">
+                <a href="/dashboard" class="navbar-link2 title-md">Home</a>
+              </li>
+    
+              <li class="navbar-item2">
+                <a href="/doctor" class="navbar-link2 title-md">Doctors</a>
+              </li>
+    
+              <li class="navbar-item2">
+                <a href="/services" class="navbar-link2 title-md">Services</a>
+              </li>
+    
+            
+    
+              <li class="navbar-item2">
+                <a href="/contact" class="navbar-link2 title-md">Contact</a>
+              </li>
+
+             
+              <li class="navbar-item2">
+                <a href="/logout" class="navbar-link2 title-md">Log out</a>
+              </li>
+                   
+
+             
+
+
+  
+        </ul>
+
+        <ul class="social-list2">
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link2">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn2" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+     
+
+      <div class="overlay2" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+  
+
+<section class="page-title bg-1" style="background-color: rgb(59, 154, 156);">
+  <div class="overlay"></div>
+  <div class="container"style="background-color: rgb(59, 154, 156);">
+    <div class="row" style="background-color: rgb(59, 154, 156);">
+      <div class="col-md-12" >
+        <div class="block text-center"  >
+          <span class="text-white" >All Doctors</span>
+          <h1 class="text-capitalize mb-5 text-lg" >Specalized doctors</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- portfolio -->
+<section class="section doctors">
+  <div class="container">
+  	  <div class="row justify-content-center">
+             <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Doctors</h2>
+                    <div class="divider mx-auto my-4"></div>
+<p>Explore our website for a diverse selection of specialized doctors ready to meet your healthcare needs.</p>                </div>
+            </div>
+        </div>
+
+      <div class="col-12 text-center  mb-5">
+	        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+	          <label class="btn active ">
+	            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Department
+	          </label>
+	          <label class="btn ">
+	            <input type="radio" name="shuffle-filter" value="cat1" />Cardiology
+	          </label>
+	          <label class="btn">
+	            <input type="radio" name="shuffle-filter" value="cat2" />Dental
+	          </label>
+	          <label class="btn">
+	            <input type="radio" name="shuffle-filter" value="cat3" />Neurology
+	          </label>
+	          <label class="btn">
+	            <input type="radio" name="shuffle-filter" value="cat4" />Medicine
+	          </label>
+	           <label class="btn">
+	            <input type="radio" name="shuffle-filter" value="cat5" />Pediatric
+	          </label>
+	          <label class="btn">
+	            <input type="radio" name="shuffle-filter" value="cat6" />Traumatology
+	          </label>
+	        </div>
+      </div>
+
+    <div class="row shuffle-wrapper portfolio-gallery">
+      	<div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat1&quot;,&quot;cat2&quot;]">
+	      	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+	               <div class="doctor-img">
+	               		<img src="team/1.jpg" alt="doctor-image" class="img-fluid w-100">
+	               </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                	<p>Cardiology</p>
+                </div> 
+	      	</div>
+      	</div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat2&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/2.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Harrision Samuel</a></h4>
+                	<p>Radiology</p>
+                </div> 
+	      	</div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat3&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/3.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Alexandar James</a></h4>
+                	<p>Dental</p>
+                </div> 
+	      	</div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat3&quot;,&quot;cat4&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/4.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Edward john</a></h4>
+                	<p>Pediatry</p>
+                </div> 
+	      	</div>
+      </div>
+
+      	<div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat5&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/1.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                	<p>Neurology</p>
+                </div> 
+	      	</div>
+      	</div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat6&quot;]">
+       		 <div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/3.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Henry samuel</a></h4>
+                	<p>Palmology</p>
+                </div> 
+	      	</div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat4&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/1.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Thomas alexandar</a></h4>
+                	<p>Cardiology</p>
+                </div> 
+	        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat5&quot;,&quot;cat6&quot;,&quot;cat1&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/3.jpg" alt="doctor-image" class="img-fluid w-100">
+		             </div>
+	             </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">HarissonThomas </a></h4>
+                	<p>Traumatology</p>
+                </div> 
+	      	</div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item illustration" data-groups="[&quot;cat2&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/4.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Jonas Thomson</a></h4>
+                	<p>Cardiology</p>
+                </div> 
+	      	</div>
+        </div>
+
+         <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;cat5&quot;,&quot;cat6&quot;,&quot;cat1&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/3.jpg" alt="doctor-image" class="img-fluid w-100">
+		            </div>
+	            </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Henry Forth</a></h4>
+                	<p>hematology</p>
+                </div> 
+	      	</div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item illustration" data-groups="[&quot;cat2&quot;]">
+        	<div class="position-relative doctor-inner-box">
+		        <div class="doctor-profile">
+		        	<div class="doctor-img">
+		               <img src="team/4.jpg" alt="doctor-image" class="img-fluid w-100">
+		             </div>
+	             </div>
+                <div class="content mt-3">
+                	<h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                	<p>Dental</p>
+                </div> 
+	      	</div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- /portfolio -->
+
+
+<!-- footer Start -->
+<footer class="footer section gray-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mr-auto col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<div class="logo mb-4">
+						<img src="logo.jpg" alt="" class="img-fluid">
+					</div>
+<p>Trust in our seasoned professionals for expert care and compassionate service at our hospital.
+
+	Innovat</p>
+					
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Department</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#!">Surgery </a></li>
+						<li><a href="#!">Wome's Health</a></li>
+						<li><a href="#!">Radiology</a></li>
+						<li><a href="#!">Cardioc</a></li>
+						<li><a href="#!">Medicine</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Support</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#!">Terms & Conditions</a></li>
+						<li><a href="#!">Privacy Policy</a></li>
+						<li><a href="#!">Company Support </a></li>
+						<li><a href="#!">FAQuestions</a></li>
+						<li><a href="#!">Company Licence</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget widget-contact mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Get in Touch</h4>
+					<div class="divider mb-4"></div>
+
+					<div class="footer-contact-block mb-4">
+						<div>
+							<p>
+							  Office Telephone : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
+							</p>
+			
+							<p>
+							  Mobile : <a href="tel:000232439493" class="contact-link">(+91)987 654 3210</a>
+							</p>
+						  </div>
+						<h4 class="mt-2"><a href="mailto:support@email.com">Support@email.com</a></h4>
+					</div>
+
+					<div class="footer-contact-block">
+						
+						<h4 class="mt-2"><a href="tel:+23-345-67890">ailto:Info@mail.com</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-btm py-4 mt-5">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-6">
+					<div class="copyright">
+						Copyright &copy; 2024, Designed &amp; Developed by <a href="https://themefisher.com/">Wellness Nexus</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+						<form action="#" class="subscribe">
+							<input type="text" class="form-control" placeholder="Your Email address" required>
+							<button type="submit" class="btn btn-main-2 btn-round-full">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4">
+					<a class="backtop scroll-top-to" href="#top">
+						<i class="icofont-long-arrow-up"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+   
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <script src="jquery/jquery.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="slick-carousel/slick/slick.min.js"></script>
+    <script src="shuffle/shuffle.min.js"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+    <script src="google-map/gmap.js"></script>
+
+    <script>
+        
+        const navbar = document.querySelector("[data-navbar]");
+        const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+        const overlay = document.querySelector("[data-overlay]");
+        
+        const toggleNav = function () {
+          navbar.classList.toggle("active");
+          overlay.classList.toggle("active");
+          document.body.classList.toggle("nav-active");
+        }
+        const addEventOnElements = function (elements, eventType, callback) {
+          for (let i = 0, len = elements.length; i < len; i++) {
+            elements[i].addEventListener(eventType, callback);
+          }
+        }
+        
+        
+        addEventOnElements(navTogglers, "click", toggleNav);
+        
+        
+        const header = document.querySelector(".header2");
+        const backTopBtn = document.querySelector("[data-back-top-btn]");
+        
+        const activeElementOnScroll = function () {
+            console.log("hello");
+        
+          if (window.scrollY > 100) {
+            header.classList.add("active");
+        
+          } else {
+            header.classList.remove("active");
+          
+          }
+        }
+        
+        window.addEventListener("scroll", activeElementOnScroll);
+        
+            </script>
+        
+    
+  </body>
+  </html>

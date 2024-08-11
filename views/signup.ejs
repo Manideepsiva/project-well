@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In</title>
+<link rel="stylesheet" href="signin.css">
+</head>
+<body >
+  <div class  = "container" style="background-color: rgb(83, 147, 147);">
+    <form action="/signup" class = "form_details" method = "post">
+    <h1> Log in</h1>
+    <p> Already have an account? <a href="/signin">Sign in </a></p>
+    <div class = "input">
+    <input type = "email" placeholder="Email address" name="usermail" required >
+    <div id = "feedbackmail"></div>
+  </div>
+  <br>
+  <div class = "input">
+    <input type="password" placeholder="Password" name="password" required> 
+  </div>
+  <div >
+    <p style="display: inline-block; margin-left: 200px;"> <%= errors %></p>
+</div>
+   <br>
+    <button type="submit">SIGN UP</button>
+  </form>
+  
+  <p>________________________________OR__________________________________</p>
+  <br> 
+  <button class = "google" type="button"><a href="/googleup" > Sign up in with Google </a></button>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,76 @@
+@import "../themes/colors"
+@import "../layout/section"
+@import "../base/icons"
+@import "../components/cards"
+@import "../components/dropdowns"
+@import "../components/tables"
+@import "../components/buttons"
+
+main
+  .filters-section
+    display: flex
+
+    .dropdowns-wrapper
+      display: flex
+
+      .dropdown
+        &:last-of-type
+          margin-left: 1em
+
+      .dropdown
+        a, .btn
+          &::after
+            margin-left: 1.5em
+
+  .specialists-table-view
+    table, .table
+      thead
+        tr
+          background-color: $color-white
+          @include shadow-sm
+
+          th
+            padding: 1em
+            border: none
+            color: $color-darker-grey
+
+      tbody
+        tr
+          background-color: transparent
+
+          td
+            text-transform: capitalize
+            padding: 1em
+            vertical-align: baseline
+            font-weight: 500
+
+            img
+              width: 30px
+              height: 30px
+              object-fit: cover
+
+            label
+              padding: .25em .5em
+
+            a
+              color: $color-dark-grey
+
+              &:hover,
+              &:focus
+                text-decoration: underline
+
+          &:hover,
+          &:focus
+            @include transition
+            @include shadow-sm-b
+            background-color: $color-white
+            border: none
+            cursor: pointer
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+  .filters-section
+    display: block !important
+
+    .buttons-wrapper
+      margin-top: .5em
